@@ -4,17 +4,45 @@
 <script src="jquery.min.js"></script>
 </head>
 <body>
-    <h1 id="n">Noyon is bad boy</h1>
-    
-    <button>Run</button>
+    <style>
+        #slider{
+            background-color: blue;
+            height: 60px;
+            padding: 10px;
+            text-align: center;
+            display: none;
+        }
+    </style>
 
+
+<div id="slider"> noyon
+</div>
+
+<div id="ani" style="background-color: brown; width: 150px; height: 150px; position: absolute;"></div>
+
+<script>
+    $(document).ready(function(){
+        $("#slider").slideDown(10000)
+        $("#slider").slideUp(10000)
+
+        $("#ani").animate({
+            left:100,
+            opacity:0.1,
+            height:'50px',
+            width:'80px'
+        })
+    });
+
+</script>
+
+<!-- 
         <script>
             $(document).ready(function(){
                 $("button").click(function(){
                     $("h1").toggle(1000)
                 })
             });
-        </script>
+        </script> -->
 
 <!-- 
     <script>
