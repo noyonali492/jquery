@@ -4,7 +4,7 @@
 <script src="jquery.min.js"></script>
 </head>
 <body>
-    <style>
+    <!-- <style>
         #slider{
             background-color: blue;
             height: 60px;
@@ -18,9 +18,20 @@
 <div id="slider"> noyon
 </div>
 
-<div id="ani" style="background-color: brown; width: 150px; height: 150px; position: absolute;"></div>
+<div id="ani" style="background-color: brown; width: 150px; height: 150px; position: absolute;"></div> -->
+
+
+<div id="mesg">2 mint show</div>
 
 <script>
+    $(document).ready(function(){
+        $("#mesg").hide(1000, function(){
+            alert("Vaiya time out");
+        })
+    });
+</script>
+
+<!-- <script>
     $(document).ready(function(){
         $("#slider").slideDown(10000)
         $("#slider").slideUp(10000)
@@ -33,7 +44,7 @@
         })
     });
 
-</script>
+</script> -->
 
 <!-- 
         <script>
