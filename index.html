@@ -4,13 +4,16 @@
 <script src="jquery.min.js"></script>
 </head>
 <body>
-      <script>
-          $(document).ready(
-            function(){
-                let name="noyon ali";
-                alert(name);
-            }
-        );
+    <h1 id="n">Noyon is bad boy</h1>
+    <button id="click_me">Click Me</button>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#click_me").click(function(){
+                $("h1").hide();
+            });
+        });
       </script>
 </body>
 </html>
