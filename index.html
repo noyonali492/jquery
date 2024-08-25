@@ -5,14 +5,24 @@
 </head>
 <body>
     <h1 id="n">Noyon is bad boy</h1>
-    <button id="click_me">Click Me</button>
+    
+    <button id="show">Hide</button>
+    <button id="hide">Show</button>
 
 
     <script>
         $(document).ready(function(){
-            $("#click_me").click(function(){
-                $("h1").hide();
+            $("#show").click(function(){
+                $(this).hide();
             });
+        });
+      </script>
+
+      <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("#show").show();
+            })
         });
       </script>
 </body>
