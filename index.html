@@ -6,9 +6,17 @@
 <body>
     <h1 id="n">Noyon is bad boy</h1>
     
-    <button id="show">Hide</button>
-    <button id="hide">Show</button>
+    <button>Run</button>
 
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("h1").toggle(1000)
+                })
+            });
+        </script>
+
+<!-- 
     <script>
         $(document).ready(function(){
             $("#show").click(function(){
@@ -19,7 +27,7 @@
                 $("h1").show();
             })
         });
-    </script>
+    </script> -->
     <!-- <script>
         $(document).ready(function(){
             $("#show").click(function(){
