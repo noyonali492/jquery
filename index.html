@@ -9,8 +9,18 @@
     <button id="show">Hide</button>
     <button id="hide">Show</button>
 
-
     <script>
+        $(document).ready(function(){
+            $("#show").click(function(){
+                $("h1").hide()
+            })
+
+            $("#hide").click(function(){
+                $("h1").show();
+            })
+        });
+    </script>
+    <!-- <script>
         $(document).ready(function(){
             $("#show").click(function(){
                 $(this).hide();
@@ -24,6 +34,6 @@
                 $("#show").show();
             })
         });
-      </script>
+      </script> -->
 </body>
 </html>
