@@ -144,5 +144,36 @@
          </script>
 
 
+
+function formSubmission(){
+    $.ajax({
+        type:'POST',
+        url:'form_submit.php',
+        dataType: "json",
+        data: $('#wizard').serialize()+'&submit=1',
+        beforeSend: function () {
+            $('.form-content').css('opacity', '.5');
+            $('.actions ul li:nth-child(3) a').css('pointer-events', 'none');
+            $( '.actions ul li:nth-child(3) a' ).text('Submitting...');
+        },
+        success:function(data){
+            if(data.status == 1){
+                $('#wizard')[0].reset();
+                $('.steps').remove();
+                $('.actions').remove();
+                $('.image-holder img').attr('src', 'images/wizard-4.png');
+                $('.form-content').css('position', 'relative');
+                $('.form-content').html('<div class="status"><p class="success">'+data.msg+'</p></div>');
+            }else{
+                $('.status').html('<p class="error">'+data.msg+'</p>');
+            }
+
+            $('.actions ul li:nth-child(3) a').css("pointer-events", "auto");
+            $( ".actions ul li:nth-child(3) a" ).text( "Submit" );
+            $('.form-content').css('opacity', '');
+        }
+    });
+}
+
 </body>
 </html>
