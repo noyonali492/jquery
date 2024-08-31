@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="field_wrapper">
+        <div>
+            <input type="text" name="field_name[]" value=""/>
+            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="add.png"/></a>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        $(document).ready(function(){
+           
+            var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button"><img src="remove.png"/></a></div>'; 
+            
+            // Once add button is clicked
+            $('.add_button').click(function(){
+                
+                  
+                    $('.field_wrapper').append(fieldHTML); //Add field html
+                
+            });
+            
+            // Once remove button is clicked
+
+            $('.field_wrapper').click(function(){
+                $('.remove_button').click(function(){
+                    $(this).parent('div').remove();
+                });
+                
+            });
+        });
+        </script>
+       
+
+
+</body>
+</html>
