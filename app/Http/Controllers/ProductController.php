@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Contracts\Validation\Rule;
+use App\Models\Product;
+
 class ProductController extends Controller
 {
     public function products(){
-        return view('products');
+        $products = Product::latest()->paginate(3);
+        return view('products',compact('products'));
     }
 
     //add product
@@ -26,5 +29,13 @@ class ProductController extends Controller
             ]
 
         );
+        $product = new Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        
+        $product->save();
+        return response()->json([
+            'status'=>'success',
+        ]);
     }
 }
